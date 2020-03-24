@@ -5,4 +5,4 @@
  var minutesDiff = currentDate.getMinutes() - quarantine.getMinutes();
  var secondsDiff = currentDate.getSeconds() - quarantine.getSeconds();
  var phrase = 'depuis le début du confinement'
-document.getElementById("day").innerHTML = date_diff +' jour(s) ' + time_diff  + ' heures ' + minutesDiff + ' minutes ' + secondsDiff + ' Secondes ' +  phrase
+document.getElementById("day").innerHTML = date_diff +' jour(s) ' + time_diff  + ' heures ' + minutesDiff + ' minutes ' + secondsDiff + ' secondes ' +  phrase
