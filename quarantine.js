@@ -1,6 +1,6 @@
 function myQuarantine(id) {
  
- var quarantine = new Date("Tue Mar 16 2020 12:00:00");
+ var quarantine = new Date("Tue Mar 17 2020 12:00:00");
  var currentDate = new Date()
  var date_diff = currentDate.getDate() - quarantine.getDate();
  var time_diff = currentDate.getHours() - quarantine.getHours();
