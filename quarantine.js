@@ -1,18 +1,63 @@
-function myQuarantine(id) {
- 
- var quarantine = new Date("Tue Mar 17 2020 12:00:00");
- var currentDate = new Date()
- var date_diff = currentDate.getDate() - quarantine.getDate();
- var time_diff = currentDate.getHours() - quarantine.getHours();
- var minutesDiff = currentDate.getMinutes() - quarantine.getMinutes();
- var seconde = currentDate.getSeconds() - quarantine.getSeconds();
- var phrase = 'depuis le début du confinement'
-document.getElementById("day").innerHTML = date_diff +' jour(s) ' + time_diff  + ' heures ' + minutesDiff + ' minutes ' + seconde + ' Secondes ' +  phrase
+const  quarantineObject = {
+  italy: {
+    country: 'Italia',
+    date : new Date('Sun Mar 9 2020 00:00:00'),
+    day: 'giorni',
+    hours:'ore',
+    minutes: 'minuti',
+    secondes: 'secondi',
+    sentence : 'dall \'inizio del contenimento'
+  },
+  spain: {
+    country: 'españa',
+    date : new Date('Sun Mar 15 2020 00:00:00'),
+    day: 'dias',
+    hours:'horas',
+    minutes: 'minutos',
+    secondes: 'segundos',
+    sentence : 'desde el inicio del confinamiento'
+  },
+  
+  france: {
+    country: 'France',
+    date : new Date('Mon Mar 17 2020 00:00:00'), 
+    day: 'jour(s)',
+    hours: 'heure(s)',
+    minutes: 'minutes',
+    secondes: 'secondes',
+    sentence :'depuis le début du confinement'
+    
+  },
+  unitedKingdom: {
+    country: 'United Kingdom',
+    date : new Date('Mon Mar 23 2020 00:00:00'),
+    day: 'day',
+    hours:'hours',
+    minutes: 'minutes',
+    secondes: 'seconds',
+    sentence : 'since the beginning of the '
+  },
 
-  if(seconde<100){
-    seconde = seconde
-  }
-  setTimeout('myQuarantine("'+id+'");','100')
-  return true;
 }
+
+function myQuarantine (id) {
+
+
+for ( const [key, value] of Object.entries(quarantineObject) ) {
+  const currentDate = new Date()
+
+  const dateDiff = currentDate.getDate() - value.date.getDate()
+  const hours = currentDate.getHours() - value.date.getHours()
+  const minutes = currentDate.getMinutes() - value.date.getMinutes()
+  const secondes = currentDate.getSeconds() - value.date.getSeconds()
+
+
+  const displayQuarantineDate = ` ${value.country}  : ${dateDiff} ${value.day} ${hours}  ${value.hours}  ${minutes} ${value.minutes} ${secondes} ${value.secondes} ${value.sentence} <br> <br>`
+  document.getElementById('day').innerHTML += displayQuarantineDate
+
+ }
+
+}
+
+
 myQuarantine("day");
