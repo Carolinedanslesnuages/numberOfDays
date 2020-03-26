@@ -61,4 +61,4 @@ for ( const [key, value] of Object.entries(quarantineObject) ) {
 }
 
 
-myQuarantine("day");
+myQuarantine();
