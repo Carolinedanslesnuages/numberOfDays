@@ -35,7 +35,7 @@ const  quarantineObject = {
     hours:'hours',
     minutes: 'minutes',
     secondes: 'seconds',
-    sentence : 'since the beginning of the '
+    sentence : 'since the beginning of the quarantine'
   },
 
 }
