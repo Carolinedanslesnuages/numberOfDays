@@ -40,7 +40,7 @@ const  quarantineObject = {
 
 }
 
-function myQuarantine (id) {
+function myQuarantine () {
 
 
 for ( const [key, value] of Object.entries(quarantineObject) ) {
