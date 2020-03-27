@@ -52,7 +52,7 @@ for ( const [key, value] of Object.entries(quarantineObject) ) {
   const secondes = currentDate.getSeconds() - value.date.getSeconds()
 
 
-    const displayQuarantineDate = `<li class="list-group-item my-1" >${value.country}  : ${dateDiff} ${value.day} ${hours}  ${value.hours}  ${minutes} ${value.minutes} ${secondes} ${value.secondes} ${value.sentence} </li>`
+    const displayQuarantineDate = `<li class="" >${value.country}  : ${dateDiff} ${value.day} ${hours}  ${value.hours}  ${minutes} ${value.minutes} ${secondes} ${value.secondes} ${value.sentence} </li>`
 
   document.getElementById('day').innerHTML += displayQuarantineDate
 
