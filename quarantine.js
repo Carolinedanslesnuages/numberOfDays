@@ -35,14 +35,13 @@ const  quarantineObject = {
     hours:'hours',
     minutes: 'minutes',
     secondes: 'seconds',
-    sentence : 'since the beginning of the quarantine'
   },
+
 
 }
 
 function myQuarantine () {
-
-
+document.getElementById('day').innerHTML = ""
 for ( const [key, value] of Object.entries(quarantineObject) ) {
   const currentDate = new Date()
 
@@ -52,7 +51,16 @@ for ( const [key, value] of Object.entries(quarantineObject) ) {
   const secondes = currentDate.getSeconds() - value.date.getSeconds()
 
 
-    const displayQuarantineDate = `<li class="" >${value.country}  : ${dateDiff} ${value.day} ${hours}  ${value.hours}  ${minutes} ${value.minutes} ${secondes} ${value.secondes} ${value.sentence} </li>`
+  const displayQuarantineDate =
+  `<div class="bg-gray-200 h-25 w-25 rounded overflow-hidden shadow">
+      <div class="font-bold text-2xl">${value.country}</div>
+   <div class="flex justify-center">
+      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${dateDiff} ${value.day}</span>
+      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${hours} ${value.hours}</span>
+      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${minutes} ${value.minutes}</span>
+      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${secondes} ${value.secondes}</span>
+  </div>
+  </div>`
 
   document.getElementById('day').innerHTML += displayQuarantineDate
 
@@ -60,5 +68,9 @@ for ( const [key, value] of Object.entries(quarantineObject) ) {
 
 }
 
+setInterval(() => {
+myQuarantine('day')
+}, 1000);
 
-myQuarantine();
+myQuarantine('day');
+
