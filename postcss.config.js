@@ -6,11 +6,5 @@ module.exports = {
     'postcss-nested': {},
     'postcss-current-selector': {},
     'postcss-apply': {},
-    'vue-cli-plugin-tailwind/purgecss': {
-      content: [
-        './src/**/*.html',
-        './src/**/*.vue',
-      ],
     },
-  },
-}
+  }
