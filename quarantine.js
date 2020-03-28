@@ -17,16 +17,16 @@ const  quarantineObject = {
     secondes: 'segundos',
     sentence : 'desde el inicio del confinamiento'
   },
-  
+
   france: {
     country: 'France',
-    date : new Date('Mon Mar 17 2020 00:00:00'), 
+    date : new Date('Mon Mar 17 2020 00:00:00'),
     day: 'jour(s)',
     hours: 'heure(s)',
     minutes: 'minutes',
     secondes: 'secondes',
     sentence :'depuis le début du confinement'
-    
+
   },
   unitedKingdom: {
     country: 'United Kingdom',
