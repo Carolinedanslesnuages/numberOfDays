@@ -6,16 +6,16 @@ const  quarantineObject = {
     hours:'ore',
     minutes: 'minuti',
     secondes: 'secondi',
-    sentence : 'dall \'inizio del contenimento'
+    flag: '<img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg"/>'
   },
   spain: {
-    country: 'españa',
+    country: 'España',
     date : new Date('Sun Mar 15 2020 00:00:00'),
     day: 'dias',
     hours:'horas',
     minutes: 'minutos',
     secondes: 'segundos',
-    sentence : 'desde el inicio del confinamiento'
+    flag : '<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" />'
   },
 
   france: {
@@ -25,7 +25,7 @@ const  quarantineObject = {
     hours: 'heure(s)',
     minutes: 'minutes',
     secondes: 'secondes',
-    sentence :'depuis le début du confinement'
+    flag:'<img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg"/>'
 
   },
   unitedKingdom: {
@@ -35,6 +35,7 @@ const  quarantineObject = {
     hours:'hours',
     minutes: 'minutes',
     secondes: 'seconds',
+    flag: '<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg"/>'
   },
 
 
@@ -54,14 +55,12 @@ function myQuarantine () {
 
 
   const displayQuarantineDate =
-  `<div class="bg-gray-200 h-25 w-25 rounded overflow-hidden shadow">
-      <div class="font-bold text-2xl">${value.country}</div>
-   <div class="flex justify-center">
-      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${difference_In_Days} ${value.day}</span>
-      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${hours} ${value.hours}</span>
-      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${minutes} ${value.minutes}</span>
-      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${secondes} ${value.secondes}</span>
-  </div>
+  `<div class=" text-center bg-gray-200 max-w-xs">
+      <div class="font-bold text-3">${value.country} ${value.flag}</div>
+        <span class="font-semibold text-gray-800">${difference_In_Days} ${value.day}</span>
+        <span class="font-semibold text-gray-800">${hours} ${value.hours}</span>
+        <span class="font-semibold text-gray-800">${minutes} ${value.minutes}</span>
+        <span class="font-semibold text-gray-800">${secondes} ${value.secondes}</span>
   </div>`
 
   document.getElementById('day').innerHTML += displayQuarantineDate
