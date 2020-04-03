@@ -41,21 +41,23 @@ const  quarantineObject = {
 }
 
 function myQuarantine () {
-document.getElementById('day').innerHTML = ""
-for ( const [key, value] of Object.entries(quarantineObject) ) {
-  const currentDate = new Date()
+  document.getElementById('day').innerHTML = ""
+  for ( const [key, value] of Object.entries(quarantineObject) ) {
+    const currentDate = new Date()
 
-  const dateDiff = currentDate.getDate() - value.date.getDate()
-  const hours = currentDate.getHours() - value.date.getHours()
-  const minutes = currentDate.getMinutes() - value.date.getMinutes()
-  const secondes = currentDate.getSeconds() - value.date.getSeconds()
+    const dateDiff = currentDate.getTime() - value.date.getTime()
+
+    const difference_In_Days = parseInt(dateDiff / Math.floor((1000 * 3600 * 24)));
+    const hours = currentDate.getHours() - value.date.getHours()
+    const minutes = currentDate.getMinutes() - value.date.getMinutes()
+    const secondes = currentDate.getSeconds() - value.date.getSeconds()
 
 
   const displayQuarantineDate =
   `<div class="bg-gray-200 h-25 w-25 rounded overflow-hidden shadow">
       <div class="font-bold text-2xl">${value.country}</div>
    <div class="flex justify-center">
-      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${dateDiff} ${value.day}</span>
+      <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${difference_In_Days} ${value.day}</span>
       <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${hours} ${value.hours}</span>
       <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${minutes} ${value.minutes}</span>
       <span class="w-1/3 inline-block   px-3 py-2  text-2xl  font-semibold text-gray-800">${secondes} ${value.secondes}</span>
