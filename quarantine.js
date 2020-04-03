@@ -55,8 +55,8 @@ function myQuarantine () {
 
 
   const displayQuarantineDate =
-  `<div class=" text-center bg-gray-200 max-w-xs">
-      <div class="font-bold text-3">${value.country} ${value.flag}</div>
+  `<div class="text-center bg-gray-200 max-w-xs rounded shadow">
+      <div class="font-bold">${value.country} ${value.flag}</div>
         <span class="font-semibold text-gray-800">${difference_In_Days} ${value.day}</span>
         <span class="font-semibold text-gray-800">${hours} ${value.hours}</span>
         <span class="font-semibold text-gray-800">${minutes} ${value.minutes}</span>
